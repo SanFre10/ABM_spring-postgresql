@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/index.css" />
+        <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <title>ABM</title>
+    </head>
+    <body>
+        <div class="form">
+            <ul>
+                <li><input class="input" type="text" placeholder="Nombre" /></li>
+                <li><input class="input" type="text" placeholder="Apellido" /></li>
+                <li><input class="input" type="text" placeholder="Telefono" /></li>
+                <li><input class="input" type="text" placeholder="Email" /></li>
+                <li>
+                    <button id="submitBtn"><span class="iconify" data-icon="akar-icons:plus"></span></button>
+                </li>
+            </ul>
+        </div>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Telefono</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+            <tr th:each="p : ${personas}" th:id="row + ${p.id}">
+                <td th:text="${p.id}"></td>
+                <td th:text="${p.nombre}"></td>
+                <td th:text="${p.apellido}"></td>
+                <td th:text="${p.telefono}"></td>
+                <td th:text="${p.email}"></td>
+                <td>
+                    <button>
+                        <a th:href="@{delete(id=${p.id})}">
+                            <span class="iconify" data-icon="ant-design:delete-outlined"></span>
+                        </a>
+                    </button>
+                    <button th:id="${p.id}" class="editBtn"><span class="iconify" data-icon="ci:edit"></span></button>
+                </td>
+            </tr>
+        </table>
+        <script src="/js/index.js"></script>
+    </body>
+</html>

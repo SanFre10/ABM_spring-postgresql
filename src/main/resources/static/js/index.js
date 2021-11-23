@@ -32,10 +32,15 @@ request = (url, data, type) => {
         url: url,
         data: JSON.stringify(data),
         contentType: "application/json",
+        beforeSend: function () {
+            $("#request-overlay").show();
+        },
         success: function () {
+            $("#request-overlay").hide();
             window.location.href = "/";
         },
         error: function (data) {
+            $("#request-overlay").hide();
             console.log(data);
         },
     });

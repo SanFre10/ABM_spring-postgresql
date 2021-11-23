@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import java.io.Serial;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

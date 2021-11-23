@@ -12,14 +12,15 @@
     <body>
         <div class="form">
             <ul>
-                <li><input class="input" type="text" placeholder="Nombre" /></li>
-                <li><input class="input" type="text" placeholder="Apellido" /></li>
-                <li><input class="input" type="text" placeholder="Telefono" /></li>
-                <li><input class="input" type="text" placeholder="Email" /></li>
+                <li><input class="input" placeholder="Nombre" /></li>
+                <li><input class="input" placeholder="Apellido" /></li>
+                <li><input class="input" type="number" placeholder="Telefono" /></li>
+                <li><input class="input" type="email" placeholder="Email" /></li>
                 <li>
                     <button id="submitBtn"><span class="iconify" data-icon="akar-icons:plus"></span></button>
                 </li>
             </ul>
+            <h4 id="error" hidden>Datos invalidos!</h4>
         </div>
         <table>
             <tr>
@@ -36,13 +37,13 @@
                 <td th:text="${p.apellido}"></td>
                 <td th:text="${p.telefono}"></td>
                 <td th:text="${p.email}"></td>
-                <td>
-                    <button>
+                <td style="text-align: right">
+                    <button th:id="${p.id}" class="editBtn"><span class="iconify" data-icon="ci:edit"></span></button>
+                    <button class="deleteBtn">
                         <a th:href="@{delete(id=${p.id})}">
                             <span class="iconify" data-icon="ant-design:delete-outlined"></span>
                         </a>
                     </button>
-                    <button th:id="${p.id}" class="editBtn"><span class="iconify" data-icon="ci:edit"></span></button>
                 </td>
             </tr>
         </table>

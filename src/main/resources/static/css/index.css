@@ -12,10 +12,10 @@ a {
 .form {
     background-color: #ddd;
     width: 80%;
-    margin: auto;
-    margin-top: 30px;
+    margin: 40px auto 0 auto;
     padding: 10px 0;
     border-radius: 10px 10px 0 0;
+    transition: all 0.3s ease-in-out;
 }
 
 .form ul {
@@ -38,40 +38,60 @@ a {
     background-color: transparent;
     outline: none;
     font-size: 1.2em;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
 }
 .form ul li input:focus {
     border-bottom: 1px solid #000;
 }
 .form ul li button {
-    padding: 10px;
+    margin-left: 10px;
+    padding: 5px;
     border: none;
     background-color: #4caf50;
     border-radius: 5px;
     height: 50px;
-    width: 150px;
+    width: 70%;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
 }
-
+.form ul li button:hover {
+    transform: scale(1.1);
+}
+#error {
+    text-align: center;
+    color: #f44336;
+    font-size: 1.2em;
+}
 table {
     border-collapse: collapse;
     width: 80%;
-    margin: auto;
+    margin: 0 auto 40px auto;
 }
 th {
-    padding: 10px;
+    padding: 30px 10px;
     text-align: left;
-    background-color: #4caf50;
+    background-color: #606060;
     color: white;
 }
+tr {
+    color: #505050;
+    transition: all 0.2s ease-in-out;
+}
 tr:nth-child(even) {
-    background: #eee;
+    background: rgb(238, 238, 238);
 }
 tr:nth-child(odd) {
-    background: #ddd;
+    background: rgb(233, 233, 233);
+}
+tr:hover {
+    background-color: rgb(225, 225, 225);
+    color: black;
 }
 td {
     width: 15%;
-    padding: 20px 10px;
+    padding: 10px 10px;
 }
 
 td[contenteditable] {
@@ -85,6 +105,16 @@ td button {
     border: none;
     text-decoration: none;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 10px;
+}
+td button:hover {
+    transform: scale(1.2);
+}
+td button a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
 
 button svg {
@@ -92,8 +122,14 @@ button svg {
     width: 100%;
     height: 100%;
 }
-td button a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+
+.deleteBtn {
+    background-color: #f44336;
+}
+.deleteBtn a {
+    color: #fff;
+}
+.editBtn {
+    background-color: #20acd6;
+    color: #fff;
 }
